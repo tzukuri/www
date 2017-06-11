@@ -1,0 +1,144 @@
+@import "vars";
+@import "ext/jeet/index";
+
+// colours
+$selected-text-colour: #ddd;
+$hover-border-colour: #c9c9c9;
+$text-colour: white;
+$sticky-text-colour: #444;
+$sticky-hover-colour: #bbb;
+
+// link spacing
+$link-padding-top: 12px;
+$link-padding-bottom: 2px;
+$link-padding-horz: 4px;
+$link-horz-spacing: 12px;
+$link-hover-jump: 3px;
+
+body > header {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    line-height: $hero-header-height;
+
+    transition-property: background-color, border-bottom-color, line-height;
+    transition-duration: 0.25s;
+
+    > div {
+        @include center($content-width);
+
+        #logo {
+            font-size: 30px;
+            vertical-align: middle;
+            display: inline-block;
+            font-family: AcherusGrotesque;
+            font-weight: 600;
+            letter-spacing: 0px;
+            color: $text-colour;
+            position: relative;
+            top: 3px;
+        }
+
+        #hamburger {
+            display: none;
+        }
+
+        nav {
+            text-align: right;
+            display: inline-block;
+            float: right;
+            position: relative;
+            top: -1px;
+
+            a {
+                font-size: 16px;
+                line-height: 16px;
+                color: $text-colour;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                
+                border-bottom: 1px solid transparent;
+                
+                display: inline-block;
+                vertical-align: middle;
+                
+                padding: $link-padding-top $link-padding-horz $link-padding-bottom $link-padding-horz;
+                margin: 0px $link-horz-spacing;
+
+                transition: border-bottom-color 0.25s,
+                            color 0.25s,
+                            padding-top 0.1s,
+                            padding-bottom 0.1s;
+
+                &:not(.button):hover {
+                    // change the colour of hovered links
+                    border-bottom-color: $hover-border-colour;
+
+                    // and slightly move them up (animated)
+                    padding-top: $link-padding-top - $link-hover-jump;
+                    padding-bottom: $link-padding-bottom + $link-hover-jump;
+                }
+
+                &.selected {
+                    color: $selected-text-colour !important;
+                    border-bottom-color: $selected-text-colour !important;
+
+                    &:hover {
+                        // reverse the changes made in :hover so selected
+                        // nav items don't visually change when hovered
+                        padding-top: $link-padding-top;
+                        padding-bottom: $link-padding-bottom;
+                    }
+                }
+
+                &.button {
+                    margin-left: 10px;
+                    padding-top: 12px !important;
+                    position: relative;
+                    top: 1px;
+
+                    &:hover {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        border-bottom: 1px solid #f5f5f5;
+        background-color: rgba(255, 255, 255, 0.99);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.03);
+        line-height: $sticky-header-height;
+
+        > div {
+            #logo {
+                color: $sticky-text-colour;
+            }
+
+            nav {
+                a {
+                    color: $sticky-text-colour;
+
+                    &:not(.button):hover {
+                        color: $sticky-text-colour;
+                        border-bottom-color: $sticky-hover-colour;
+                    }
+
+                    &.selected {
+                        color: $sticky-text-colour !important;
+                        border-bottom-color: $sticky-text-colour !important;
+                    }
+                }
+            }
+        }
+    }
+} 

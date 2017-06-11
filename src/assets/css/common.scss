@@ -1,0 +1,101 @@
+@import "vars";
+@import "ext/jeet/index";
+
+html, body {
+    font-family: TTNorms, Helvetica, sans-serif;
+    background-color: $page-background;
+}
+
+.container {
+    @include center($content-width);
+}
+
+main {
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.button {
+    font-size: 16px;
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 20px;
+
+    background-color: $tzu-green;
+    background-clip: padding-box;
+    border: 1px solid $tzu-green !important;
+    color: white !important;
+    padding: 10px 35px 10px 35px !important;
+    cursor: pointer;
+    opacity: 1;
+
+    i {
+      color: white !important;
+      margin-left: 10px;
+    }
+
+    // sizes
+    &.small {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    &.medium {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &.large {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    // inverted style
+    &.inverted {
+      background-color: transparent;
+      color: $tzu-green !important;
+
+      i {
+        color: $tzu-green !important;
+      }
+
+      &.disabled:hover {
+        background-color: white !important;
+      }
+
+      &:hover {
+          background-color: $tzu-green !important;
+          color: white !important;
+
+          i {
+            color: white !important;
+          }
+      }
+    }
+
+    // mouse hover state
+    &:hover {
+        background-color: transparent !important;
+        color: $tzu-green !important;
+
+        i {
+          color: $tzu-green;
+        }
+    }
+
+    // visually disabled state
+    &.disabled {
+        opacity: 0.5;
+        cursor: auto;
+
+        &:hover {
+            background-color: $tzu-green !important;
+            color: white !important;
+        }
+    }
+}

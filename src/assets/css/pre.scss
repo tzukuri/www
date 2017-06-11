@@ -1,0 +1,11 @@
+// inline a small amount of styling right at the start of the html with
+// just enough css to display the header so the site appears to load
+// quickly. this requires resetting the browser's default stylesheet,
+// loading the grid system, and defining the styling for the header/nav.
+@import "ext/reset";
+@import "ext/jeet/index";
+@import "fonts/acherus-grotesque";
+@import "fonts/tt-norms";
+@import "vars";
+@import "common";
+@import "header";

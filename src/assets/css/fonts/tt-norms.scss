@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'TTNorms';
+    src: url('/fonts/tt-norms/light/tt-norms-light.eot');
+    src: url('/fonts/tt-norms/light/tt-norms-light.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/tt-norms/light/tt-norms-light.woff2') format('woff2'),
+         url('/fonts/tt-norms/light/tt-norms-light.woff') format('woff'),
+         url('/fonts/tt-norms/light/tt-norms-light.ttf') format('truetype'),
+         url('/fonts/tt-norms/light/tt-norms-light.svg#youworkforthem') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTNorms';
+    src: url('/fonts/tt-norms/regular/tt-norms-regular.eot');
+    src: url('/fonts/tt-norms/regular/tt-norms-regular.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/tt-norms/regular/tt-norms-regular.woff2') format('woff2'),
+         url('/fonts/tt-norms/regular/tt-norms-regular.woff') format('woff'),
+         url('/fonts/tt-norms/regular/tt-norms-regular.ttf') format('truetype'),
+         url('/fonts/tt-norms/regular/tt-norms-regular.svg#youworkforthem') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTNorms';
+    src: url('/fonts/tt-norms/italic/tt-norms-italic.eot');
+    src: url('/fonts/tt-norms/italic/tt-norms-italic.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/tt-norms/italic/tt-norms-italic.woff2') format('woff2'),
+         url('/fonts/tt-norms/italic/tt-norms-italic.woff') format('woff'),
+         url('/fonts/tt-norms/italic/tt-norms-italic.ttf') format('truetype'),
+         url('/fonts/tt-norms/italic/tt-norms-italic.svg#youworkforthem') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TTNorms';
+    src: url('/fonts/tt-norms/medium/tt-norms-medium.eot');
+    src: url('/fonts/tt-norms/medium/tt-norms-medium.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/tt-norms/medium/tt-norms-medium.woff2') format('woff2'),
+         url('/fonts/tt-norms/medium/tt-norms-medium.woff') format('woff'),
+         url('/fonts/tt-norms/medium/tt-norms-medium.ttf') format('truetype'),
+         url('/fonts/tt-norms/medium/tt-norms-medium.svg#youworkforthem') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}

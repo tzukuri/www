@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- TODO: inline -->
+        <link rel="stylesheet" href="/css/pre.css">
+        <title>{% if page.title %}{{ page.title }} | {% endif %}Tzukuri</title>
+        <meta charset="utf-8">
+
+        <meta name="Description" content="{{ page.description }}">
+        <link rel="home" href="https://tzukuri.com/">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="twitter:site" content="@tzukuri">
+
+        <meta property="fb:app_id" content="311590038897709">
+        <meta property="og:url" content="https://tzukuri.com{{ page_path }}">
+        <meta property="og:description" content="Beautifully handmade glasses you won't lose.">
+        <meta property="og:title" content="Unlosable Glasses">
+        <meta property="og:image" content="http://tzukuri.com/og.png">
+        <meta property="og:image:secure_url" content="https://tzukuri.com/og.png">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <!-- shopify -->
+        {{ content_for_header }}
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+
+    <body class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" {% if sticky_header %}sticky-header{% endif %}>
+        <header class="{% if sticky_header %}sticky{% endif %}">
+            <div>
+                <a id="logo" href="/">tzukuri</a>
+                <nav>
+                    {% for link in nav %}
+                        <a href="{{ link.url }}" class="{% if page_path == link.url %}selected{% endif %}">{{ link.title }}</a>
+                    {% endfor %}
+                    <a href="/buy" class="button tz-track" id="try-btn" data-category="nav" data-event="buy-now-click">buy now</a>
+                </nav>
+                <a id="hamburger" class="fa fa-bars"></a>
+            </div>
+        </header>
+
+
+        <!-- for shopify -->
+        {{ content_for_layout }}
+
+        <!-- for local dev -->
+        {% block page %}{% endblock %}
+
+        <footer>
+        </footer>
+    </body>
+</html>

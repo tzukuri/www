@@ -9,16 +9,26 @@ var express = require('express'),
     methodOverride = require('method-override'),
     errorHandler = require('errorhandler'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    liquid = require('shopify-liquid');
 
 module.exports = function() {
   var app = express();
 
+  var engine = liquid({
+    root: path.join(__dirname, 'src', 'layouts'),
+    extname: '.liquid'
+  });
+
   // all environments
   app.set('port', process.env.PORT || 3000);
   app.set('views', path.join(__dirname, 'src', 'layouts'));
-  app.set('view engine', 'pug');
-  app.use(favicon("public/images/punch.png"));
+  
+  // liquid templates
+  app.set('views', [path.join(__dirname, 'src', 'layouts'), path.join(__dirname, 'src', 'components')])
+  app.engine('liquid', engine.express());
+  app.set('view engine', 'liquid');
+
   app.use(logger('dev'));
   app.use(bodyParser());
   app.use(methodOverride());

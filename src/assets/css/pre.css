@@ -3,7 +3,6 @@
 // quickly. this requires resetting the browser's default stylesheet,
 // loading the grid system, and defining the styling for the header/nav.
 @import "ext/reset";
-@import "ext/jeet/index";
 @import "fonts/acherus-grotesque";
 @import "fonts/tt-norms";
 @import "vars";

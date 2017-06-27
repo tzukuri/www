@@ -32,7 +32,7 @@ module.exports = function() {
   app.use(logger('dev'));
   app.use(bodyParser());
   app.use(methodOverride());
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'dist')));
 
   app.use(errorHandler());
 

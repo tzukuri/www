@@ -1,3 +1,4 @@
+// TODO: rewrite without jquery
 function checkScrollState() {
     var stickyHeader = $('body').attr('sticky-header') != undefined;
     var scrollTop = $(window).scrollTop();
@@ -11,7 +12,7 @@ function checkScrollState() {
 
 // the page may load at a certain scroll position (e.g after a reload)
 // so set the correct scroll state on page load
-$(window).load(function() {
+$(window).on('load', function() {
     // move our fn call to the end of the event queue to give the browser
     // time to run its own scroll processing (e.g scrolling to # anchors)
     setTimeout(checkScrollState, 200);

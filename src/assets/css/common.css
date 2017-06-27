@@ -1,5 +1,4 @@
 @import "vars";
-@import "ext/jeet/index";
 
 html, body {
     font-family: TTNorms, Helvetica, sans-serif;
@@ -7,7 +6,7 @@ html, body {
 }
 
 .container {
-    @include center($content-width);
+    lost-center: $content-width;
 }
 
 main {
@@ -35,8 +34,8 @@ main {
     opacity: 1;
 
     i {
-      color: white !important;
-      margin-left: 10px;
+        color: white !important;
+        margin-left: 10px;
     }
 
     // sizes
@@ -57,25 +56,25 @@ main {
 
     // inverted style
     &.inverted {
-      background-color: transparent;
-      color: $tzu-green !important;
-
-      i {
+        background-color: transparent;
         color: $tzu-green !important;
-      }
 
-      &.disabled:hover {
-        background-color: white !important;
-      }
+        i {
+            color: $tzu-green !important;
+        }
 
-      &:hover {
-          background-color: $tzu-green !important;
-          color: white !important;
+        &.disabled:hover {
+            background-color: white !important;
+        }
 
-          i {
+        &:hover {
+            background-color: $tzu-green !important;
             color: white !important;
-          }
-      }
+
+            i {
+                color: white !important;
+            }
+        }
     }
 
     // mouse hover state
@@ -84,7 +83,7 @@ main {
         color: $tzu-green !important;
 
         i {
-          color: $tzu-green;
+            color: $tzu-green;
         }
     }
 

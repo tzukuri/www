@@ -1,0 +1,27 @@
+/*
+Font: 		TT Norms
+Style: 		Italic
+URL: 		https://www.youworkforthem.com/font/T7926/tt-norms
+Foundry: 	TypeType
+Foundry: 	https://www.youworkforthem.com/designer/538/typetype
+Copyright:	Copyright (c) 2017 by TypeType. Designers Ivan Gladkikh, Pavel Emelyanov. Technical designers Olexa Volochay, Nadyr Rakhimov, Dmitriy Greshnev. All rights reserved.
+Version: 	17
+Created:	June 16, 2017
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'TTNorms-Italic';
+	src: url('tt-norms-italic.eot');
+	src: url('tt-norms-italic.eot?#iefix') format('embedded-opentype'),
+             url('tt-norms-italic.woff2') format('woff2'),
+	     url('tt-norms-italic.woff') format('woff'),
+	     url('tt-norms-italic.ttf') format('truetype'),
+	     url('tt-norms-italic.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

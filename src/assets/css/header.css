@@ -1,5 +1,4 @@
 @import "vars";
-@import "ext/jeet/index";
 
 // colours
 $selected-text-colour: #ddd;
@@ -31,7 +30,7 @@ body > header {
     transition-duration: 0.25s;
 
     > div {
-        @include center($content-width);
+        lost-center: $content-width;
 
         #logo {
             font-size: 30px;

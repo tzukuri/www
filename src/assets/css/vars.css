@@ -1,9 +1,9 @@
-// colours
+/* colours */
 $page-background: #F1EBEB;
 $tzu-green: #2C7567;
 $panel-grey: #f9f9f9;
 
-// sizes
+/* sizes */
 $content-width: 1140px;
 $hero-header-height: 110px;
 $sticky-header-height: 60px;

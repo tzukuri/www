@@ -41,7 +41,7 @@ body > header {
             letter-spacing: 0px;
             color: $text-colour;
             position: relative;
-            top: 3px;
+            top: 1px;
         }
 
         #hamburger {
@@ -60,7 +60,7 @@ body > header {
                 line-height: 16px;
                 color: $text-colour;
                 font-weight: 500;
-                text-transform: uppercase;
+                text-transform: lowercase;
                 letter-spacing: -1px;
                 
                 border-bottom: 1px solid transparent;

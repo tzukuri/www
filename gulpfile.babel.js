@@ -1,11 +1,13 @@
 import * as path from 'path'
 import gulp from 'gulp'
+var gls = require('gulp-live-server')
 
 // postcss
 import stripInlineComments from 'postcss-strip-inline-comments'
 import postcss from 'gulp-postcss'
 import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
+import utils from 'postcss-utilities'
 import cssnano from 'cssnano'
 import precss from 'precss'
 import scss from 'postcss-scss'
@@ -74,6 +76,7 @@ const preprocessPostCSSPlugins = [
 ]
 
 const postprocessPostCSSPlugins = [
+    utils(),
     precss(),
     lost(),
     autoprefixer(),
@@ -163,14 +166,24 @@ gulp.task('images:compress', () => {
 // --------------------------------------------------------
 // commands
 // --------------------------------------------------------
+gulp.task('serve', () => {
+    var server = gls.new('app.js')
+    server.start()
+
+    return gulp.watch(path.join('.', 'dist', '**', '*'), file => {
+        server.notify.apply(server, [file])
+    })
+})
+
 gulp.task('watch', () => {
     //gulp.watch(liquidPaths, {cwd: './'}, series('html:precompile'))
     gulp.watch(sources.js, {cwd: './'}, series('js:compile'))
     gulp.watch(sources.css, {cwd: './'}, series('css:compile'))
     gulp.watch(sources.images, {cwd: './'}, series('images:compress'))
+    gulp.watch(sources.fonts, {cwd: './'}, series('fonts:copy'))
 })
 
-gulp.task('default', parallel('css:compile', 'images:compress', 'fonts:copy', 'js:compile', 'watch'))
+gulp.task('default', parallel('css:compile', 'images:compress', 'fonts:copy', 'js:compile', 'serve', 'watch'))
 
 gulp.task('content:sync', () => {
     return Content.current.sync()
